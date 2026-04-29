@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação</title>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    
+    <div class="container">
+        <img src="static/ChatGPT Image 28 de abr. de 2026, 09_50_47.png" alt="logo" class="logo">
+        <h1>Avalie nosso serviço</h1>
+        <p>Sua opinião é importante</p>
+        <form action="avaliar" method="POST">
+            <input type="text" name="nome" placeholder="Seu nome:"
+            required>
+
+            <div class="stars">
+                <span class="star"
+                data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+
+            <input type="hidden" id="rating" name="rating">
+            <input type="hidden" name="nota" id="nota" required>
+
+            <textarea name="comentario" placeholder="Conte sua experiência" required></textarea>
+            <button type="submit">Enviar Avaliação</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+</body>
+</html>
